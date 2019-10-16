@@ -17,3 +17,65 @@ Material for Soirée du test Logiciel 2019 event
 - Lancer la commande pour générer la couverture de test
 
 - Faire la même chose pour le deuxième exercice
+
+
+
+
+### Extenstions à installer
+
+- robot framework language
+- Robot Framework Intellisense
+
+
+#### EXECUTION TESTS
+
+# Commande pour lancer le test
+
+robot -A tests/config/demo2 tests/test-suites/02_Gestion_d_une_anomalie/01_Scenario_anomalie_corrigee.robot
+
+# Avec Option pour visualiser
+
+robot -A tests/config/demo2 -v BROWSER_DISPLAY_MODE: tests/test-suites/02_Gestion_d_une_anomalie/01_Scenario_anomalie_corrigee.robot
+
+# Pour lancer le tests sans execution mais pour contrôler que votre test est bien écrit
+
+robot --dry -A tests/config/demo2 tests/test-suites/02_Gestion_d_une_anomalie/01_Scenario_anomalie_corrigee.robot
+
+
+
+
+
+
+#### GENERATION DOCUMENTATION
+
+# Générer la spécification
+
+npm run gen-test-specifications
+
+
+# Générer la couverture
+
+gen-test-compliance
+
+
+
+
+
+
+#### KEYWORDS
+
+
+# Keywords privés
+La majorité des keywords se trouve directement dans le fichier de test (en bas, section *** Keywords ***)
+
+Si besoin, des keywords supplémentaires sont disponibles dans le dossier :
+node_modules/functionnal-tests/resources/app-french/wishlist/
+
+
+# Keywords publiques
+
+Builtin : https://robotframework.org/robotframework/latest/libraries/BuiltIn.html
+(Keywords génériques de robotframewor)
+
+Selenium : http://robotframework.org/Selenium2Library/Selenium2Library.html
+(Keywords liés aux actions UI)
