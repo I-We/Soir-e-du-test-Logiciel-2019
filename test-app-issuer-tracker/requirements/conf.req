@@ -1,0 +1,21 @@
+define REQ_PATTERN  REQ_[-a-zA-Z0-9_\.]*
+define ALPHANUM [-a-zA-Z0-9_]
+
+document SPEC
+    -path ./requirements.md
+    -type txt
+    -req REQ_PATTERN
+    -sort alphanum
+
+
+
+document 01_Scenario_anomalie_corrigee
+  -path  ../test-suites/02_Gestion_d_une_anomalie/01_Scenario_anomalie_corrigee.robot
+  -req "^[a-zA-Z\.].*"
+  -ref ".*Tags. *(ALPHANUM+)"
+  -type txt
+  -sort alphanum
+  -prefix-req  "01_Scenario_anomalie_corrigee: "
+	-start-after ".*Test Cases.*"
+  -stop-after  ".*Keywords.*"
+  -nocov
